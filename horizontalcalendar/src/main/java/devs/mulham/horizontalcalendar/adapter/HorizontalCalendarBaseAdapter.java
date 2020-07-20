@@ -1,12 +1,10 @@
 package devs.mulham.horizontalcalendar.adapter;
 
 import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +15,6 @@ import java.util.List;
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
 import devs.mulham.horizontalcalendar.HorizontalCalendarView;
 import devs.mulham.horizontalcalendar.HorizontalLayoutManager;
-import devs.mulham.horizontalcalendar.R;
 import devs.mulham.horizontalcalendar.model.CalendarEvent;
 import devs.mulham.horizontalcalendar.model.CalendarItemStyle;
 import devs.mulham.horizontalcalendar.utils.CalendarEventsPredicate;
@@ -143,10 +140,7 @@ public abstract class HorizontalCalendarBaseAdapter<VH extends DateViewHolder, T
         viewHolder.textMiddle.setTextColor(itemStyle.getColorMiddleText());
         viewHolder.textBottom.setTextColor(itemStyle.getColorBottomText());
         if (itemStyle.getTextFontFamily() != null) {
-            Log.e("Check", "Set Font");
             viewHolder.textTop.setTypeface(itemStyle.getTextFontFamily());
-        } else {
-            Log.e("Check", "Not Set Font");
         }
         if (Build.VERSION.SDK_INT >= 16) {
             viewHolder.itemView.setBackground(itemStyle.getBackground());
